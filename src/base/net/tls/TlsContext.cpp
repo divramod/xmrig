@@ -157,7 +157,7 @@ bool xmrig::TlsContext::load(const TlsConfig &config)
     SSL_CTX_set_options(m_ctx, SSL_OP_CIPHER_SERVER_PREFERENCE);
 
 #   if OPENSSL_VERSION_NUMBER >= 0x1010100fL
-    SSL_CTX_set_max_early_data(m_ctx, 0);
+    SSL_CTX_set_ex_data(m_ctx, 0);
 #   endif
 
     setProtocols(config.protocols());
